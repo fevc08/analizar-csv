@@ -3,7 +3,7 @@ Este script analiza datos de inventario en archivos CSVs, muestra las filas cuya
 
 ## Requisitos:
 - `Bash`: para poder ejecutar el script
-- `archivo.csv`: requiere que el archivo a analizar sea un archivo de testo con valores separados por coma, para que pueda hacer el análisis.
+- `archivo.csv`: requiere que el archivo a analizar sea un archivo de texto con valores separados por coma, para que pueda hacer el análisis.
 
 ## Uso:
 Para utilizar el script se debe escribir el siguiente comando, donde `ejemplo.csv` puede ser cualquier archivo de texto con valores separado por comas.
