@@ -38,5 +38,6 @@ Así, se tendrían los archivos de resultados y el historial de errores.
 ## Archivos Ignorados:
 Para evitar que Git siga y los suba los archivos que no queremos en el repositorio, se crea el archivo `.gitignore` con las siguientes reglas:
 ```text
-.txt
+reporte.txt
+errores.txt
 ```
