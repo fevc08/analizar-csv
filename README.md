@@ -1,12 +1,12 @@
 # `analiza-csv.sh`
-Este script analiza datos de inventario en archivos CSVs, muestra las filas cuya última columna está vacía. Además, cuenta cuantas filas por bodegas hay. Adicionalmente, para evitar reproceso, tiene unos filtros iniciales que indica si se está indicando el archivo a analizar y si el archivo a analizar es un archivo regular.
+Este script recibe uno o varios archivos de textos con valores separados por comas, muestra las filas cuya última columna está vacía y cuenta cuantas filas por valor hay en la segunda columna. Adicionalmente, para evitar reproceso, tiene dos filtros: una función de como se debe usar el archivo si no se escribe el archivo a analizar y otra función que verifica si el o los archivos a analizar no existem o no son regulares.
 
 ## Requisitos:
 - `Bash`: para poder ejecutar el script
-- `archivo.csv`: requiere que el archivo a analizar sea un archivo de texto con valores separados por coma, para que pueda hacer el análisis.
+- `archivo.csv`: recibe uno o varios archivos de texto con valores separados por coma.
 
 ## Uso:
-Para utilizar el script se debe escribir el siguiente comando, donde `ejemplo.csv` puede ser cualquier archivo de texto con valores separado por comas.
+Para utilizar el script se debe escribir el siguiente comando, donde `ejemplo.csv` puede ser cualquier archivo de texto con valores separados por comas.
 ```bash
 bash analiza-csv.sh ejemplo.csv
 ```
@@ -32,7 +32,27 @@ bash analiza-csv.sh ejemplo.csv > reporte.txt 2> errores.txt
 Así, se tendrían los archivos de resultados y el historial de errores.
 
 > Ejemplo de comando con varios archivos:
-> `bash analiza-csv.sh ejemplo.csv [ejemplo2.csv ...]`
+
+```bash
+bash analiza-csv.sh ejemplo.csv inventario.csv
+Análisis de ejemplo.csv
+Número de filas: 10
+Filas vacias:
+6:2026-10-25,Bodega Oeste,Impresora,
+Filas por bodega:
+      4 Bodega Central
+      3 Bodega Sur
+      3 Bodega Oeste
+Análisis de inventario.csv
+Número de filas: 10
+Filas vacias:
+6:2026-10-05,Bodega B,Laptop,
+Filas por bodega:
+      4 Bodega A
+      3 Bodega C
+      3 Bodega B
+Análisis sin problemas
+```
 
 ## Códigos de Salida:
 |Código|Cuándo ocurre en el script|
